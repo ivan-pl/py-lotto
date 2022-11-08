@@ -1,0 +1,2 @@
+# py-lotto
+Lotto game
