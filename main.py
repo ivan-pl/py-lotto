@@ -4,6 +4,6 @@ from gamemodel import GameModel
 
 if __name__ == "__main__":
     gameView = GameView()
-    gameModel = GameModel("player", "PC")
+    gameModel = GameModel()
     gameController = GameController(gameView, gameModel)
     gameController.startGame()
