@@ -1,9 +1,30 @@
 class GameView:
 
-    @staticmethod
-    def new_game():
+    def new_game(self):
         print("="*20, "НОВАЯ ИГРА", "="*20, sep="\n")
+
+    def show_keg_info(self, keg_num, count_left):
+        print(f"Новый бочонок: {keg_num} (осталось {count_left})")
+
+    def show_card(self, card, card_owner):
+        if card_owner == "player":
+            print("-"*6, " Ваша карточка ", "-"*6)
+        else:
+            print("-"*3, " Карточка компьютера ", "-"*3)
+        for row in card:
+            str_line = ""
+            for num in row:
+                if num < 10:
+                    str_line += f" {num} "
+                else:
+                    str_line += f"{num} "
+            print(str_line)
+        print("-"*29)
 
 
 if __name__ == "__main__":
-    GameView.new_game()
+    view = GameView()
+    view.new_game()
+    view.show_keg_info(21, 67)
+    view.show_card([[1, 23, 3], [4, 55, 6]], "player")
+    view.show_card([[12, 7, 3], [8, 6, 11]], "pc")

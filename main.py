@@ -6,4 +6,4 @@ if __name__ == "__main__":
     gameView = GameView()
     gameModel = GameModel()
     gameController = GameController(gameView, gameModel)
-    gameController.startGame()
+    gameController.start_game()
