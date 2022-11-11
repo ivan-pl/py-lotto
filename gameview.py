@@ -14,12 +14,23 @@ class GameView:
         for row in card:
             str_line = ""
             for num in row:
-                if num < 10:
+                if num == 0:
+                    str_line += f" - "
+                elif num < 10:
                     str_line += f" {num} "
                 else:
                     str_line += f"{num} "
             print(str_line)
         print("-"*29)
+
+    def get_next_turn(self):
+        answer = None
+        while (answer not in ("y", "n")):
+            answer = input("Зачеркнуть цифру? (y/n)")
+        return answer
+
+    def show_finish_game(self, reason):
+        print("="*20, "Игра закончена", reason, "="*20, sep="\n")
 
 
 if __name__ == "__main__":
